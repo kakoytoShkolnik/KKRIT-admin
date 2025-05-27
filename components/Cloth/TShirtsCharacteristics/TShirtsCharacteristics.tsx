@@ -24,6 +24,7 @@ export const TShirtsCharacteristics = () => (
         validate={[required()]}
         defaultValue={GOODS_COLORS[0].name}
         optionValue='name'
+        optionText='name'
       />
       <SelectInput
         className='block__select'
