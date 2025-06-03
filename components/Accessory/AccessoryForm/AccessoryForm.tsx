@@ -73,13 +73,14 @@ export const AccessoryForm = ({
           validate={[required()]}
           optionValue='name'
         />
-        {type !== ACCESSORIES_TYPES[2].name && (
-          <CheckboxGroupInput
-            source='sizes'
-            choices={GOODS_SIZES}
-            optionValue='name'
-          />
-        )}
+        {type !== ACCESSORIES_TYPES[2].name ||
+          (type !== ACCESSORIES_TYPES[0].name && (
+            <CheckboxGroupInput
+              source='sizes'
+              choices={GOODS_SIZES}
+              optionValue='name'
+            />
+          ))}
         <CheckboxGroupInput
           source='isNew'
           choices={GOODS_IS_NEW}
