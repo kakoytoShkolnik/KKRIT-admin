@@ -1,18 +1,19 @@
-// server.js
-const express = require('express')
-const path = require('path')
+import express from 'express'
+import path from 'path'
+import { fileURLToPath } from 'url'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 const app = express()
-const PORT = process.env.PORT || 3000
 
-// Раздаём статические файлы из dist
 app.use(express.static(path.join(__dirname, 'dist')))
 
-// Для SPA: все маршруты → index.html
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'))
 })
 
+const PORT = process.env.PORT || 3000
 app.listen(PORT, () => {
-  console.log(`🚀 Админка запущена: https://<your-url>.onrender.com`)
+  console.log(`🚀 Админка запущена на порту ${PORT}`)
 })
