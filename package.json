@@ -19,6 +19,7 @@
     "@mui/utils": "^5.15.20",
     "axios": "^1.8.4",
     "express": "^5.1.0",
+    "express-history-api-fallback": "^2.2.1",
     "react": "^19.0.0",
     "react-admin": "^5.7.0",
     "react-dom": "^19.0.0",
