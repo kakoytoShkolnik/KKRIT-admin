@@ -11,6 +11,8 @@ export const authProvider: AuthProvider = {
       password,
     })
 
+    console.log(data)
+
     if (data) {
       if (data.warning) {
         return Promise.reject(new HttpError(data.warning, 401))
